@@ -1,0 +1,2 @@
+F:\project\Для портфолио\ThreadProject\Debug\ThreadProject.exe
+F:\project\Для портфолио\ThreadProject\Debug\ThreadProject.pdb

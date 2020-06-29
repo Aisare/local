@@ -1,0 +1,3 @@
+﻿  Main.cpp
+F:\project\Для портфолио\ThreadProject\Main.cpp(47,14): warning C4244: инициализация: преобразование "std::streamoff" в "int", возможна потеря данных
+  ThreadProject.vcxproj -> F:\project\Для портфолио\ThreadProject\Debug\ThreadProject.exe
