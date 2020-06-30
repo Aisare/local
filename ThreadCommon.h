@@ -12,7 +12,7 @@ class ThreadCommon
 
 public:
 	ThreadCommon(void (*ptrFunction)());
-	ThreadCommon(void (*ptrFunction)(string[]),string parametr1[]);
+	ThreadCommon(void (*ptrFunction)(string[]),string parametr1[] = nullptr);
 	~ThreadCommon();
 
 };

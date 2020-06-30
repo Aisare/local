@@ -1,3 +1,5 @@
-﻿  Main.cpp
-F:\project\Для портфолио\ThreadProject\Main.cpp(47,14): warning C4244: инициализация: преобразование "std::streamoff" в "int", возможна потеря данных
-  ThreadProject.vcxproj -> F:\project\Для портфолио\ThreadProject\Debug\ThreadProject.exe
+﻿  ClassToFunctionThreadTest.cpp
+  Main.cpp
+  Создание кода...
+C:\Users\alust\source\repos\Aisare\local\ClassToFunctionThreadTest.cpp(26,13): warning C4244: инициализация: преобразование "std::streamoff" в "int", возможна потеря данных
+LINK : fatal error LNK1104: не удается открыть файл "opencv_calib3d410.lib"

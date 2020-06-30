@@ -1,0 +1,6 @@
+﻿  ClassToFunctionThreadTest.cpp
+  Main.cpp
+  ThreadCommon.cpp
+  Создание кода...
+C:\Users\alust\source\repos\Aisare\local\ClassToFunctionThreadTest.cpp(26,13): warning C4244: инициализация: преобразование "std::streamoff" в "int", возможна потеря данных
+LINK : fatal error LNK1104: не удается открыть файл "C:\Users\alust\source\repos\Aisare\local\OpenCV4.1\lib\Debug\opencv_calib3d410.lib"

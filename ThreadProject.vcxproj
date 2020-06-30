@@ -17,6 +17,14 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="x64|Win32">
+      <Configuration>x64</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="x64|x64">
+      <Configuration>x64</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -30,6 +38,12 @@
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='x64|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
@@ -38,6 +52,12 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='x64|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
@@ -58,17 +78,34 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='x64|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='x64|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>F:\OpenCV4.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>F:\OpenCV4.1\lib\Debug;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='x64|Win32'">
+    <IncludePath>F:\OpenCV4.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>F:\OpenCV4.1\lib\Debug;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>OpenCV4.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>OpenCV4.1\lib\Debug;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -77,9 +114,32 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='x64|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>ade.lib;opencv_calib3d410d.lib;opencv_core410d.lib;opencv_dnn410d.lib;opencv_features2d410d.lib;opencv_gapi410d.lib;opencv_flann410d.lib;opencv_imgcodecs410d.lib;opencv_ml410d.lib;opencv_imgproc410d.lib;opencv_photo410d.lib;opencv_objdetect410d.lib;opencv_ts410d.lib;opencv_stitching410d.lib;opencv_video410d.lib;opencv_videoio410d.lib;opencv_calib3d410.lib;opencv_core410.lib;opencv_dnn410.lib;opencv_features2d410.lib;opencv_flann410.lib;opencv_gapi410.lib;opencv_highgui410.lib;opencv_imgcodecs410.lib;opencv_imgproc410.lib;opencv_ml410.lib;opencv_photo410.lib;opencv_objdetect410.lib;opencv_stitching410.lib;opencv_ts410.lib;opencv_video410.lib;opencv_videoio410.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>ade.lib;C:\Users\alust\source\repos\Aisare\local\OpenCV4.1\lib\Debug\opencv_calib3d410d.lib;C:\Users\alust\source\repos\Aisare\local\OpenCV4.1\lib\Debug\opencv_core410d.lib;C:\Users\alust\source\repos\Aisare\local\OpenCV4.1\lib\Debug\opencv_dnn410d.lib;C:\Users\alust\source\repos\Aisare\local\OpenCV4.1\lib\Debug\opencv_features2d410d.lib;C:\Users\alust\source\repos\Aisare\local\OpenCV4.1\lib\Debug\opencv_gapi410d.lib;C:\Users\alust\source\repos\Aisare\local\OpenCV4.1\lib\Debug\opencv_flann410d.lib;C:\Users\alust\source\repos\Aisare\local\OpenCV4.1\lib\Debug\opencv_imgcodecs410d.lib;C:\Users\alust\source\repos\Aisare\local\OpenCV4.1\lib\Debug\opencv_ml410d.lib;C:\Users\alust\source\repos\Aisare\local\OpenCV4.1\lib\Debug\opencv_imgproc410d.lib;C:\Users\alust\source\repos\Aisare\local\OpenCV4.1\lib\Debug\opencv_photo410d.lib;C:\Users\alust\source\repos\Aisare\local\OpenCV4.1\lib\Debug\opencv_objdetect410d.lib;C:\Users\alust\source\repos\Aisare\local\OpenCV4.1\lib\Debug\opencv_ts410d.lib;C:\Users\alust\source\repos\Aisare\local\OpenCV4.1\lib\Debug\opencv_stitching410d.lib;C:\Users\alust\source\repos\Aisare\local\OpenCV4.1\lib\Debug\opencv_video410d.lib;C:\Users\alust\source\repos\Aisare\local\OpenCV4.1\lib\Debug\opencv_videoio410d.lib;C:\Users\alust\source\repos\Aisare\local\OpenCV4.1\lib\Debug\opencv_calib3d410.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='x64|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
@@ -118,10 +178,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ClassToFunctionThreadTest.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="ThreadCommon.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ClassToFunctionThreadTest.h" />
     <ClInclude Include="ThreadCommon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
